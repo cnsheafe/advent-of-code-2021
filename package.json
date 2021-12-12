@@ -1,0 +1,21 @@
+{
+  "name": "advent-of-code-2021",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test:watch": "jest --watch",
+    "prepare": "husky install",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "jest": "^27.4.4",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
