@@ -1,4 +1,5 @@
-const { intoNumbers } = require("../readInput/readInput");
+const S = require("../S");
+const { readInputIntoNumbers } = require("../readInput/readInput");
 
 function countDepthIncreases(depthReadings) {
   let count = 0;
@@ -12,11 +13,8 @@ function countDepthIncreases(depthReadings) {
   return count;
 }
 
-async function countDepthIncreasesFromInput(filePath) {
-  const depthReadings = await intoNumbers(filePath);
-
-  return countDepthIncreases(depthReadings);
-}
+const countDepthIncreasesFromInput =
+  S.compose(countDepthIncreases)(readInputIntoNumbers);
 
 module.exports = {
   countDepthIncreases,

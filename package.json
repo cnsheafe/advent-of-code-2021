@@ -17,5 +17,8 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "sanctuary": "^3.1.0"
   }
 }

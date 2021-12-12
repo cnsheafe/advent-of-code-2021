@@ -8,9 +8,9 @@ describe("day 1", () => {
     expect(countDepthIncreases(depthReadings)).toBe(7);
   });
 
-  test("count depth decreases from provided input", async () => {
+  test("count depth decreases from provided input", () => {
     const filePath = path.resolve("1", "input");
-    const count = await countDepthIncreasesFromInput(filePath);
+    const count = countDepthIncreasesFromInput(filePath, "utf-8");
 
     expect(count).toMatchSnapshot();
   });

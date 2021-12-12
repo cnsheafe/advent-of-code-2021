@@ -1,5 +1,8 @@
 const path = require("path");
-const { intoArray, intoNumbers } = require("./readInput");
+const {
+  readInputIntoArray: intoArray,
+  readInputIntoNumbers: intoNumbers,
+} = require("./readInput");
 
 describe("readInput", () => {
   describe("intoArray", () => {

@@ -1,18 +1,19 @@
 const fs = require("fs");
+const S = require("../S");
 
-async function intoArray(filePath) {
-  const contentString = await fs.readFileSync(filePath, "utf-8");
+function readInputIntoArray(filePath) {
+  const contentString = fs.readFileSync(filePath, "utf-8");
+  const filterEmptyLines = S.filter((line) => line !== "");
+  const toArray = S.compose(filterEmptyLines)(S.splitOn("\n"));
 
-  return contentString.split("\n").filter((line) => line !== "");
+  return toArray(contentString);
 }
 
-function intoNumbers(filePath) {
-  return intoArray(filePath).then((stringArray) =>
-    stringArray.map((v) => parseInt(v, 10))
-  );
-}
+const mapToNumbers = S.map(S.parseInt(10));
+const toNumber = S.compose(S.justs)(mapToNumbers);
+const readInputIntoNumbers = S.compose(toNumber)(readInputIntoArray);
 
 module.exports = {
-  intoArray,
-  intoNumbers,
+  readInputIntoArray,
+  readInputIntoNumbers,
 };
