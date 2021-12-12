@@ -16,7 +16,27 @@ function countDepthIncreases(depthReadings) {
 const countDepthIncreasesFromInput =
   S.compose(countDepthIncreases)(readInputIntoNumbers);
 
+const sum = (depthReadings) => {
+  const measurements = [];
+  for (let i = 0; i < depthReadings.length; i++) {
+    const window = depthReadings.slice(i, i + 3);
+    const measurement = S.compose(S.sum)(
+      S.filter((reading) => typeof reading === "number")
+    )(window);
+
+    measurements.push(measurement);
+  }
+
+  return measurements;
+};
+
+const withWindow = S.compose(countDepthIncreases)(sum);
+const countDepthIncreasesWithWindow =
+  S.compose(withWindow)(readInputIntoNumbers);
+
 module.exports = {
   countDepthIncreases,
   countDepthIncreasesFromInput,
+  withWindow,
+  countDepthIncreasesWithWindow,
 };

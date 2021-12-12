@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`day 1 count depth decreases from provided input 1`] = `1342`;
+exports[`day 1 part 1 count depth increases from provided input 1`] = `1342`;
+
+exports[`day 1 part 2 -- sliding window count depth increases from provided input 1`] = `1378`;
