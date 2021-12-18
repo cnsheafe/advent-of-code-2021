@@ -1,5 +1,5 @@
-const sanctuary = require("sanctuary");
+const sanctuary = require('sanctuary')
 
-const S = sanctuary.create({ checkTypes: true, env: sanctuary.env });
+const S = sanctuary.create({ checkTypes: true, env: sanctuary.env })
 
-module.exports = S;
+module.exports = S
