@@ -1,7 +1,7 @@
-const S = require("../S");
-const { readInputIntoNumbers } = require("../readInput/readInput");
+import S from "../S";
+import { readInputIntoNumbers } from "../readInput/readInput";
 
-function countDepthIncreases(depthReadings) {
+export function countDepthIncreases(depthReadings) {
   let count = 0;
 
   for (let i = 0; i < depthReadings.length; i++) {
@@ -13,7 +13,7 @@ function countDepthIncreases(depthReadings) {
   return count;
 }
 
-const countDepthIncreasesFromInput =
+export const countDepthIncreasesFromInput =
   S.compose(countDepthIncreases)(readInputIntoNumbers);
 
 const sum = (depthReadings) => {
@@ -30,13 +30,7 @@ const sum = (depthReadings) => {
   return measurements;
 };
 
-const withWindow = S.compose(countDepthIncreases)(sum);
-const countDepthIncreasesWithWindow =
-  S.compose(withWindow)(readInputIntoNumbers);
+export const withWindow = S.compose(countDepthIncreases)(sum);
 
-module.exports = {
-  countDepthIncreases,
-  countDepthIncreasesFromInput,
-  withWindow,
-  countDepthIncreasesWithWindow,
-};
+export const countDepthIncreasesWithWindow =
+  S.compose(withWindow)(readInputIntoNumbers);

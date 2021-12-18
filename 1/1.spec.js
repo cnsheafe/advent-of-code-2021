@@ -1,10 +1,10 @@
-const path = require("path");
-const {
+import path from "path";
+import {
   countDepthIncreases,
   countDepthIncreasesFromInput,
   countDepthIncreasesWithWindow,
   withWindow,
-} = require("./1");
+} from "./1";
 
 describe("day 1", () => {
   describe("part 1", () => {

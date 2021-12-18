@@ -1,5 +1,5 @@
-const fs = require("fs");
-const S = require("../S");
+import fs from "fs";
+import S from "../S";
 
 function readInputIntoArray(filePath) {
   const contentString = fs.readFileSync(filePath, "utf-8");
